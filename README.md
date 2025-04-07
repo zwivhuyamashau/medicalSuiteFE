@@ -57,11 +57,12 @@ cd my-app
 npm install
 ```
 
-3. setup your AWS API gateway stage link on config.js,
-4. add your google clientID on App.jsx
+3. Setup your AWS API gateway stage link on config.js,
+4. Add your google clientID on App.jsx
+5. Add your n8n chatbot URL on dashboard.jsx
 
 
-5. Start the development server:
+6. Start the development server:
 ```bash
 npm run dev
 ```

@@ -17,8 +17,8 @@ const Authentication = ({ onLoginSuccess }) => {
       name: decoded.name,
       email: decoded.email,
       picture: decoded.picture,
-      role: 'Physician', // You can customize this based on your needs
-      department: 'General' // You can customize this based on your needs
+      role: 'Physician', 
+      department: 'General' 
     }));
 
     // Call the success handler

@@ -15,45 +15,24 @@ A comprehensive React application that helps users find nearby doctors and provi
 
 ### 💰 Quote Generator Module
 The quote module provides automated pricing and estimates:
-- Dynamic quote generation
+- Quote generation
 - Automated PDF generation
 - Email quote functionality
-- Quote history tracking
-- Customizable templates
 
-```jsx
-// Example Quote Module Usage
-<QuoteModule
-  services={selectedServices}
-  insuranceProvider="BlueCross"
-  patientType="new"
-  customDiscounts={discounts}
-  outputFormat="pdf"
-/>
-```
 
 ### 🤖 AI Chatbot Assistant
 The integrated chatbot provides:
-- 24/7 patient support
-- Appointment scheduling assistance
-- Medical information guidance
+- Google search intergration
 - FAQ handling
-- Emergency contact information
-- Multilingual support
+
 
 ### 📊 Marketing Plan Generator
 Helps medical practices create comprehensive marketing strategies:
 - Custom marketing plan generation
-- Target audience analysis
-- Competition research
-- Digital marketing strategies
-- Social media planning
-- Budget allocation
-- ROI tracking
 
 ### 🔬 Medical Room transform
 Advanced image processing capabilities:
-- Transform a room picture from one to a state of art design room
+- Transform a room picture from an empty space to a state of art design room
 
 
 ## 🚀 Quick Start
@@ -69,8 +48,8 @@ Advanced image processing capabilities:
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
-cd doctor-search
+git clone https://github.com/zwivhuyamashau/medicalSuiteFE
+cd my-app
 ```
 
 2. Install dependencies:
@@ -78,12 +57,8 @@ cd doctor-search
 npm install
 ```
 
-3. setup your API keys:
-```env
-VITE_GOOGLE_MAPS_API_KEY=your_google_places_api_key
-VITE_OPENAI_API_KEY=your_openai_api_key
-VITE_IMAGE_API_KEY=your_image_api_key
-```
+3. setup your AWS API gateway stage link on config.js:
+
 
 4. Start the development server:
 ```bash
@@ -151,98 +126,4 @@ src/
     ├── useQuoteCalculator.js
     ├── useChatbot.js
     └── useImageProcessing.js
-```
 
-## 🎯 Feature Details
-
-### 💰 Quote Module Implementation
-The quote generation system provides:
-- Service package customization
-- Automated PDF generation
-- Email integration
-
-Example quote calculation:
-```javascript
-// Quote calculation helper
-const calculateQuote = ({
-  baseServices,
-  additionalServices,
-  insuranceDetails,
-  discounts
-}) => {
-  const baseTotal = calculateBaseTotal(baseServices);
-  const additionalTotal = calculateAdditionalServices(additionalServices);
-  const insuranceCoverage = calculateInsuranceCoverage(insuranceDetails);
-  const discountAmount = applyDiscounts(discounts);
-
-  return {
-    subtotal: baseTotal + additionalTotal,
-    insuranceCoverage,
-    discountAmount,
-    total: calculateFinalTotal({
-      baseTotal,
-      additionalTotal,
-      insuranceCoverage,
-      discountAmount
-    })
-  };
-};
-```
-
-### Quote Module Components
-
-#### QuoteModule
-Main component that orchestrates the quote generation process:
-```jsx
-import { QuoteModule } from './components/quote/QuoteModule';
-
-<QuoteModule
-  initialServices={[]}
-  insuranceProviders={providers}
-  discountCodes={availableDiscounts}
-  onQuoteGenerated={(quote) => {
-    // Handle generated quote
-  }}
-  outputFormat="pdf"
-/>
-```
-
-#### QuoteForm
-Handles user input for quote generation:
-```jsx
-<QuoteForm
-  services={availableServices}
-  insuranceOptions={insuranceProviders}
-  onSubmit={handleQuoteSubmission}
-  defaultValues={savedQuote}
-/>
-```
-
-#### QuoteCalculator
-Performs the pricing calculations:
-```jsx
-<QuoteCalculator
-  services={selectedServices}
-  insurance={selectedInsurance}
-  discounts={appliedDiscounts}
-  onCalculationComplete={handleCalculation}
-/>
-```
-
-#### QuotePreview
-Displays the generated quote:
-```jsx
-<QuotePreview
-  quoteData={generatedQuote}
-  allowEdit={true}
-  showPrintButton={true}
-  onEdit={handleEdit}
-  onPrint={handlePrint}
-/>
-```
-
-
-
----
-
-Built with ❤️ using React and advanced AI technologies

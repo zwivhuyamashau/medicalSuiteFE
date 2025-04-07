@@ -1,0 +1,203 @@
+/* Base styles remain unchanged */
+#n8n-chat {
+    transition: all 0.2s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+/* Animation Enhancements */
+#n8n-chat .chat-message-bubble {
+    transform-origin: bottom;
+    animation: messageAppear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes messageAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Keep existing common styles below */
+
+/* Base styles */
+#n8n-chat {
+    transition: all 0.2s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Light mode */
+html[data-theme="light"] #n8n-chat {
+    background: linear-gradient(135deg, var(--chakra-colors-brand-50), var(--chakra-colors-accent-50));
+    color: var(--chakra-colors-gray-800);
+    box-shadow: var(--chakra-shadows-lg);
+    border: 1px solid var(--chakra-colors-gray-200);
+}
+
+html[data-theme="light"] #n8n-chat .chat-header {
+    background: linear-gradient(to right, var(--chakra-colors-brand-500), var(--chakra-colors-accent-500));
+    border-bottom: 1px solid var(--chakra-colors-gray-200);
+}
+
+/* Light mode - Force black heading */
+html[data-theme="light"] #n8n-chat .chat-title,
+html[data-theme="light"] #n8n-chat .chat-header-title,
+html[data-theme="light"] #n8n-chat [class*="title"],
+html[data-theme="light"] #n8n-chat .header-title,
+html[data-theme="light"] #n8n-chat .chat-window-title,
+html[data-theme="light"] #n8n-chat div[class*="title"] {
+    color: white !important;
+}
+
+html[data-theme="light"] #n8n-chat .chat-message-bubble--bot {
+    background-color: white;
+    color: var(--chakra-colors-gray-800);
+    border: 1px solid var(--chakra-colors-gray-200);
+    box-shadow: var(--chakra-shadows-sm);
+}
+
+html[data-theme="light"] #n8n-chat .chat-message-bubble--user {
+    background: linear-gradient(to right, var(--chakra-colors-brand-500), var(--chakra-colors-accent-500));
+    color: white;
+}
+
+html[data-theme="light"] #n8n-chat .chat-input {
+    background-color: white;
+    border: 1px solid var(--chakra-colors-gray-200);
+    color: var(--chakra-colors-gray-800);
+}
+
+html[data-theme="light"] #n8n-chat .chat-input::placeholder {
+    color: var(--chakra-colors-gray-500);
+}
+
+
+html[data-theme="dark"] #n8n-chat .chat-input::placeholder {
+    color: var(--chakra-colors-whiteAlpha-400);
+}
+
+/* Force text color for input in dark mode */
+html[data-theme="dark"] #n8n-chat input,
+html[data-theme="dark"] #n8n-chat textarea,
+html[data-theme="dark"] #n8n-chat [contenteditable="true"] {
+    color: rgb(0, 0, 0) !important;
+    caret-color: rgb(0, 0, 0) !important;
+}
+
+
+/* Common styles */
+#n8n-chat .chat-header {
+    padding: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+#n8n-chat .chat-messages {
+    padding: 1rem;
+}
+
+#n8n-chat .chat-message-bubble {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#n8n-chat .chat-message-bubble--bot {
+    border-top-left-radius: 0;
+}
+
+#n8n-chat .chat-message-bubble--user {
+    border-top-right-radius: 0;
+    margin-left: auto;
+}
+
+#n8n-chat .chat-input-container {
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+#n8n-chat .chat-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Send button styles */
+#n8n-chat .send-button {
+    background: linear-gradient(to right, var(--chakra-colors-brand-500), var(--chakra-colors-accent-500));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+#n8n-chat .send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--chakra-shadows-md);
+}
+
+#n8n-chat .send-button:active {
+    transform: translateY(0);
+}
+
+/* Get Started button styles */
+#n8n-chat .getStarted {
+    background: linear-gradient(to right, var(--chakra-colors-brand-500), var(--chakra-colors-accent-500));
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+html[data-theme="dark"] #n8n-chat .getStarted {
+    background: linear-gradient(to right, var(--chakra-colors-brand-400), var(--chakra-colors-accent-400));
+}
+
+#n8n-chat .getStarted:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--chakra-shadows-md);
+}
+
+#n8n-chat .getStarted:active {
+    transform: translateY(0);
+}
+
+/* Close button styles */
+#n8n-chat .closeButton {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+}
+
+#n8n-chat .closeButton:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

@@ -96,7 +96,7 @@ function App() {
   }
 
   return (
-    <GoogleOAuthProvider clientId="75883346187-18pif0gq2ssq23hauui2h9ai4o212u7m.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="XXXX-clientID">
       <ChakraProvider theme={theme}>
         <Router>
           <AuthProvider>

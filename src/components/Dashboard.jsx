@@ -314,7 +314,7 @@ const Dashboard = () => {
     // Initialize chat if not already initialized
     if (!chatInstance) {
       chatInstance = createChat({
-        webhookUrl: 'https://zwivhuya.app.n8n.cloud/webhook/6d9459b8-9108-4dc6-b6b3-7344c284213f/chat',
+        webhookUrl: "XXXXXXXXXXX",
         webhookConfig: {
           method: 'POST',
           headers: {},

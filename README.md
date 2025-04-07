@@ -57,10 +57,11 @@ cd my-app
 npm install
 ```
 
-3. setup your AWS API gateway stage link on config.js:
+3. setup your AWS API gateway stage link on config.js,
+4. add your google clientID on App.jsx
 
 
-4. Start the development server:
+5. Start the development server:
 ```bash
 npm run dev
 ```
